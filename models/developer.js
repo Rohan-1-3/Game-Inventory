@@ -5,10 +5,10 @@ const { DateTime } = require("luxon");
 const Schema = mongoose.Schema;
 
 const DeveloperSchema = new Schema({
-    name: {title: String, required: true},
-    founder : { title : String, required: true},
-    founded : {title: Date, required: true},
-    headquaters: {title: String, required: true}
+    name: { type: String, required: true },
+    founder : { type : String, required: true },
+    founded : { type: Date },
+    headquarters: { type: String, required: true}
 });
 
 DeveloperSchema.virtual("url").get(function(){
