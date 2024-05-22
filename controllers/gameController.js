@@ -43,3 +43,26 @@ exports.game_list = asyncHandler(async (req, res, next)=>{
         game_list: allGames
     });
 });
+
+exports.game_detail = asyncHandler(async (req, res, next)=>{
+    const [game, gameinstance] = await Promise.all([
+        Game.findById(req.params.id)
+            .populate("developer")
+            .populate("genre")
+            .populate("awards").exec(),
+        GameInstance.find({game: req.params.id}).exec(),
+    ]);
+
+    if(game === null){
+        const err = new Error("Game not Found");
+        err.status = 404;
+        return next(err);
+    }
+
+    res.render("game_detail", {
+        title: game.title,
+        game: game,
+        gameinstances: gameinstance
+
+    });
+});
