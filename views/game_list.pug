@@ -2,6 +2,8 @@ extends layout
 
 block content
     div.game-list-container
+        a(href="/catalog/game/create")
+            button.add-game Add Game +
         div.game-list
             if game_list.length
                 ul

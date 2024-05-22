@@ -66,3 +66,28 @@ exports.game_detail = asyncHandler(async (req, res, next)=>{
 
     });
 });
+
+exports.game_create_get = asyncHandler(async (req, res, next)=>{
+    const [allDevelopers, allAwards, allGenres] = await Promise.all([
+        Developer.find().sort({name: 1}).exec(),
+        Award.find().sort({name: 1}).exec(),
+        Genre.find().sort({name: 1}).exec(),
+    ]);
+
+    const platforms = [
+        { name: "Nintendo Switch", id: "4" },
+        { name: "PlayStation", id: "5" },
+        { name: "Xbox", id: "6" },
+        { name: "Mobile", id: "7" },
+        { name: "PC" ,id : "2"}
+      ];
+
+      console.log(platforms)
+    res.render("game_form",{
+        title: "Game Form",
+        developers_list: allDevelopers,
+        awards_list: allAwards,
+        genres_list: allGenres,
+        platforms_list: platforms
+    });
+});

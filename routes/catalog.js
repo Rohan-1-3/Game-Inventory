@@ -13,14 +13,15 @@ const awardController = require("../controllers/awardController")
 // GET catalog home page.
 router.get("/", gameController.index);
 
+// GET request for creating a Game. NOTE This must come before routes that display Game (uses id).
+router.get("/game/create", gameController.game_create_get);
+
 // GET request for list of all Game items.
 router.get("/games", gameController.game_list);
 
 // GET request for one Game.
 router.get("/game/:id", gameController.game_detail);
 
-// GET request for creating a Game. NOTE This must come before routes that display Game (uses id).
-// router.get("/game/create", gameController.game_create_get);
 
 // // POST request for creating Game.
 // router.post("/game/create", gameController.game_create_post);

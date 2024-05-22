@@ -1,0 +1,74 @@
+extends layout
+
+block content
+    h1=title
+
+    form(method='POST')
+      div.form-group
+        label(for='title') Title:
+        br
+        input(type='text', id='title', name='title', required)
+
+      div.form-group
+        label(for='yearReleased') Year Released:
+        br
+        input(type='date', id='yearReleased', name='yearReleased', required)
+
+      div.form-group
+        label(for='developer') Developer:
+        br
+        select(id='developer', name='developer', required)
+            option(value="") --Please select an developer--
+                for developer in developers_list
+                    if game
+                        if developer._id.toString() === game.developer._id.toString()
+                            option(value=developer._id selected) #{developer.name}
+                        else
+                            option(value=developer._id) #{developer.name}
+                    else
+                        option(value=developer._id) #{developer.name}
+
+      div.form-group
+        label(for='genre') Genre:
+        br
+        div
+            for genre in genres_list
+                div(style='display: inline; padding-right:10px;')
+                    if genre.checked
+                        input.checkbox-input(type='checkbox', name='genre', id=genre._id, value=genre._id, checked)
+                    else
+                        input.checkbox-input(type='checkbox', name='genre', id=genre._id, value=genre._id)
+                    label(for=genre._id) &nbsp;#{genre.name}
+
+      div.form-group
+        label(for='summary') Summary:
+        br
+        textarea(id='summary', name='summary', rows='4', cols='50', required)
+
+      div.form-group
+        label(for='awards') Awards:
+        br
+        div
+            for award in awards_list
+                div(style='display: inline; padding-right:10px;')
+                    if award.checked
+                        input.checkbox-input(type='checkbox', name='award', id=award._id, value=award._id, checked)
+                    else
+                        input.checkbox-input(type='checkbox', name='award', id=award._id, value=award._id)
+                    label(for=award._id) &nbsp;#{award.name}
+
+      div.form-group
+        label(for='coverPage') Cover Page URL:
+        br
+        input(type='text', id='coverPage', name='coverPage')
+
+      div.form-group
+        label(for='platform') Platform:
+        br
+        div
+            for platform in platforms_list
+                div(style='display: inline; padding-right:10px;')
+                    input.checkbox-input(type='checkbox', name='plaform', id=platform.name, value=platform.name)
+                    label(for=platform.name) &nbsp;#{platform.name}
+
+      input(type='submit', value='Submit')
