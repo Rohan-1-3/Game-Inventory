@@ -1,5 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.index-container
+    h1= title
+    p Welcome to #{title},
+    p
+    strong The Ultimate Game Collection
+    |   app is designed for avid gamers and collectors to efficiently manage and explore their extensive video game libraries. This comprehensive tool offers a seamless and intuitive interface that caters to all aspects of game collection management, from cataloging and organization to exploration and community engagement.
+
+    div.collection-count
+      p The collection has the following record counts:
+
+      ul
+        li #[strong Games:] !{game_count}
+        li #[strong Copies:] !{gameinstance_count}
+        li #[strong Developers:] !{developer_count}
+        li #[strong Genres:] !{genre_count}
+        li #[strong Awards:] !{award_count}

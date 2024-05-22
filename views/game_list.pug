@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    div.game-list-container
+        div.game-list
+            if game_list.length
+                ul
+                    each game in game_list
+                        li
+                            div.game
+                                div.game-image
+                                    if game.coverPage.length
+                                        img(src=game.coverPage alt="Game Cover Image")
+                                    else
+                                        img(src="https://t3.ftcdn.net/jpg/04/60/01/36/360_F_460013622_6xF8uN6ubMvLx0tAJECBHfKPoNOR5cRa.jpg" alt="A default image")
+                                div.game-text
+                                    div.title
+                                        a(href=game.url) #{game.title}
+                                        p Released: #{game.year_formatted}
+                                        p
+                                        | Developer:
+                                        a(href=game.developer.url)  #{game.developer.name}
+                                    p Genres:
+                                        if game.genre && game.genre.length
+                                            each genre in game.genre
+                                                a(href=genre.url)  #{genre.name},
+                                        else
+                                            p No genres available.
+                                div.buttons
+                                    button.delete-button Delete
+                                    button.update-button Update
+            else
+                p There are no games present.
