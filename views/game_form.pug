@@ -7,12 +7,12 @@ block content
       div.form-group
         label(for='title') Title:
         br
-        input(type='text', id='title', name='title', required)
+        input(type='text', id='title', name='title', required, value=(undefined===game ? "" : game.title))
 
       div.form-group
         label(for='yearReleased') Year Released:
         br
-        input(type='date', id='yearReleased', name='yearReleased', required)
+        input(type='date', id='yearReleased', name='yearReleased', required, value=(undefined===game ? "" : game.year_yyyy_mm_dd))
 
       div.form-group
         label(for='developer') Developer:
@@ -43,7 +43,7 @@ block content
       div.form-group
         label(for='summary') Summary:
         br
-        textarea(id='summary', name='summary', rows='4', cols='50', required)
+        textarea(id='summary', name='summary', rows='4', cols='50', required)= game ? game.summary : ''
 
       div.form-group
         label(for='awards') Awards:
@@ -60,7 +60,7 @@ block content
       div.form-group
         label(for='coverPage') Cover Page URL:
         br
-        input(type='text', id='coverPage', name='coverPage')
+        input(type='text', id='coverPage', name='coverPage', value=(undefined===game ? "" : game.coverPage))
 
       div.form-group
         label(for='platform') Platform:

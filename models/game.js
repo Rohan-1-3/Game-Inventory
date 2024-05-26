@@ -19,7 +19,7 @@ GameSchema.virtual("url").get(function(){
     return `/catalog/game/${this._id}`
 });
 
-GameSchema.virtual("year_yyyy__mm__dd").get(function(){
+GameSchema.virtual("year_yyyy_mm_dd").get(function(){
     return this.yearReleased ?  moment(this.yearReleased).format('YYYY-MM-DD') : ""
 });
 

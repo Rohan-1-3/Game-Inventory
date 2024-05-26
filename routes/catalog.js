@@ -26,11 +26,11 @@ router.get("/game/:id/delete", gameController.game_delete_get);
 // POST request to delete Game.
 router.post("/game/:id/delete", gameController.game_delete_post);
 
-// // GET request to update Game.
-// router.get("/game/:id/update", gameController.game_update_get);
+// GET request to update Game.
+router.get("/game/:id/update", gameController.game_update_get);
 
-// // POST request to update Game.
-// router.post("/game/:id/update", gameController.game_update_post);
+// POST request to update Game.
+router.post("/game/:id/update", gameController.game_update_post);
 
 // GET request for list of all Game items.
 router.get("/games", gameController.game_list);

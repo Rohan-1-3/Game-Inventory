@@ -12,6 +12,16 @@ block content
             a(href=val.url) #{val.name}
             if index < game.genre.length - 1
                 |,&nbsp;
+    p #[strong Awards: ]
+        each val, index in game.awards
+            a(href=val.url) #{val.name}
+            if index < game.genre.length - 1
+                |,&nbsp;
+    p #[strong Platform: ]
+        each val, index in game.platform
+            span #{val}
+            if index < game.genre.length - 1
+                |,&nbsp;
 
         div(style='margin-left:20px;margin-top:20px')
             h2(style='font-size: 1.5rem;') Copies
@@ -36,3 +46,6 @@ block content
     p
         a(href=game.url + "/delete")
             button.delete-button Delete
+    p
+        a(href=game.url + "/update")
+            button.update-button Update
