@@ -22,14 +22,15 @@ block content
                                         p
                                         | Developer:
                                         a(href=game.developer.url)  #{game.developer.name}
-                                    p Genres:
-                                        if game.genre && game.genre.length
-                                            each genre in game.genre
-                                                a(href=genre.url)  #{genre.name},
-                                        else
-                                            p No genres available.
+                                        p Genres:
+                                            if game.genre && game.genre.length
+                                                each genre in game.genre
+                                                    a(href=genre.url)  #{genre.name},
+                                            else
+                                                p No genres available.
                                 div.buttons
-                                    button.delete-button Delete
+                                    a(href=game.url + "/delete")
+                                        button.delete-button Delete
                                     button.update-button Update
             else
                 p There are no games present.

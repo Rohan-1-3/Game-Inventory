@@ -72,3 +72,8 @@ block content
                     label(for=platform.name) &nbsp;#{platform.name}
 
       input(type='submit', value='Submit')
+
+    if errors
+      ul
+        for error in errors
+          li!=error.msg

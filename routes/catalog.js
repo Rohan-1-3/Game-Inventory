@@ -16,27 +16,28 @@ router.get("/", gameController.index);
 // GET request for creating a Game. NOTE This must come before routes that display Game (uses id).
 router.get("/game/create", gameController.game_create_get);
 
-// GET request for list of all Game items.
-router.get("/games", gameController.game_list);
-
-// GET request for one Game.
-router.get("/game/:id", gameController.game_detail);
+// POST request for creating Game.
+router.post("/game/create", gameController.game_create_post);
 
 
-// // POST request for creating Game.
-// router.post("/game/create", gameController.game_create_post);
+// GET request to delete Game.
+router.get("/game/:id/delete", gameController.game_delete_get);
 
-// // GET request to delete Game.
-// router.get("/game/:id/delete", gameController.game_delete_get);
-
-// // POST request to delete Game.
-// router.post("/game/:id/delete", gameController.game_delete_post);
+// POST request to delete Game.
+router.post("/game/:id/delete", gameController.game_delete_post);
 
 // // GET request to update Game.
 // router.get("/game/:id/update", gameController.game_update_get);
 
 // // POST request to update Game.
 // router.post("/game/:id/update", gameController.game_update_post);
+
+// GET request for list of all Game items.
+router.get("/games", gameController.game_list);
+
+// GET request for one Game.
+router.get("/game/:id", gameController.game_detail);
+
 
 // /// Developer ROUTES ///
 
