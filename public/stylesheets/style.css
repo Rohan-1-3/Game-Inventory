@@ -8,12 +8,19 @@ body{
   padding: 1rem 2rem ;
 }
 
+.main-container{
+  position: relative;
+  width: 100%;
+}
+
 nav {
   background-color: #333;
   overflow: hidden;
   width: 100%;
   font-weight: 500;
   font-size: 1.2rem;
+  position: sticky;
+  top: 0;
 }
 nav a {
   float: left;
@@ -38,7 +45,7 @@ li {
   margin: 20px 0;
 }
 
-div.game {
+div.game, .developer {
   display: flex;
   align-items: center;
   background: white;
@@ -47,19 +54,19 @@ div.game {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-div.game-image {
-  flex-shrink: 0;
+div.game-image, .developer-image {
+  /* flex-shrink: 0; */
   margin-right: 20px;
 }
 
-div.game-image img {
+div.game-image img, .developer-image img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 5px;
 }
 
-div.game-text {
+div.game-text, .developer-content {
   flex-grow: 1;
 }
 

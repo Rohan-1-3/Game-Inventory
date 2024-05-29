@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1 Developers List
+    a(href="/catalog/developer/create")
+            button.add-game Add Developer +
+    div.developer-list-container
+        if developers.length
+            ul
+                for developer in developers
+                    li
+                        div.developer
+                            div.developer-image
+                                //- if developer.logo.length
+                                //-     img(src=developer.logo alt="Game Cover Image")
+                                //- else
+                                img(src="https://t3.ftcdn.net/jpg/04/60/01/36/360_F_460013622_6xF8uN6ubMvLx0tAJECBHfKPoNOR5cRa.jpg" alt="A default image")
+                            div.developer-content
+                                a(href=developer.url)
+                                    p #{developer.name}
+                                p Founded: #{developer.founded_formatted}
+                                p Founder: #{developer.founder}
+                            div.buttons
+                                a(href=developer.url + "/delete")
+                                    button.delete-button Delete
+                                a(href=developer.url + "/update")
+                                    button.update-button Update
+        else
+            p There are no developers.

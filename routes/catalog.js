@@ -59,11 +59,11 @@ router.get("/game/:id", gameController.game_detail);
 // // POST request to update Developer.
 // router.post("/developer/:id/update", developerController.developer_update_post);
 
-// // GET request for one Developer.
-// router.get("/developer/:id", developerController.developer_detail);
+// GET request for one Developer.
+router.get("/developer/:id", developerController.developer_detail);
 
-// // GET request for list of all Developers.
-// router.get("/developers", developerController.developer_list);
+// GET request for list of all Developers.
+router.get("/developers", developerController.developer_list);
 
 // /// GENRE ROUTES ///
 

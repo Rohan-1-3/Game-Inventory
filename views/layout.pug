@@ -4,11 +4,12 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    nav
-      a(href='/') Home
-      a(href='/catalog/games') Games
-      a(href='#') Developers
-      a(href='#') Genres
-      a(href='#') Game Copies
+    div.main-container
+      nav
+        a(href='/') Home
+        a(href='/catalog/games') Games
+        a(href='/catalog/developers') Developers
+        a(href='/catalog/genres') Genres
+        a(href='/catalog/gamecopies') Game Copies
 
-    block content
+      block content
