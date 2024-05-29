@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1= title
+
+    if games.length
+        p #[strong Delete the following games before attempting to delete this developer.]
+        div(style='margin-left:20px;margin-top:20px')
+            h2 Games
+            dl
+                each game in games
+                    a(href=game.url) #{game.title}
+                    span  (#{game.year_formatted})
+    else
+        p Are you sure you want to delete this developer?
+        form(method="POST")
+            input#authorid.form-control(type='hidden', name='id', value=developer._id )
+            button(type="submit") Delete

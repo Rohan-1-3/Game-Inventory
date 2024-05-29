@@ -8,7 +8,7 @@ const DeveloperSchema = new Schema({
     name: { type: String, required: true },
     founder : { type : String, required: true },
     founded : { type: Date },
-    headquarters: { type: String, required: true},
+    headquarters: { type: String, required: true },
     logo : {type: String}
 });
 

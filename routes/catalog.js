@@ -41,23 +41,23 @@ router.get("/game/:id", gameController.game_detail);
 
 // /// Developer ROUTES ///
 
-// // GET request for creating Developer. NOTE This must come before route for id (i.e. display Developer).
-// router.get("/developer/create", developerController.developer_create_get);
+// GET request for creating Developer. NOTE This must come before route for id (i.e. display Developer).
+router.get("/developer/create", developerController.developer_create_get);
 
-// // POST request for creating Developer.
-// router.post("/developer/create", developerController.developer_create_post);
+// POST request for creating Developer.
+router.post("/developer/create", developerController.developer_create_post);
 
-// // GET request to delete Developer.
-// router.get("/developer/:id/delete", developerController.developer_delete_get);
+// GET request to delete Developer.
+router.get("/developer/:id/delete", developerController.developer_delete_get);
 
-// // POST request to delete Developer.
-// router.post("/developer/:id/delete", developerController.developer_delete_post);
+// POST request to delete Developer.
+router.post("/developer/:id/delete", developerController.developer_delete_post);
 
-// // GET request to update Developer.
-// router.get("/developer/:id/update", developerController.developer_update_get);
+// GET request to update Developer.
+router.get("/developer/:id/update", developerController.developer_update_get);
 
-// // POST request to update Developer.
-// router.post("/developer/:id/update", developerController.developer_update_post);
+// POST request to update Developer.
+router.post("/developer/:id/update", developerController.developer_update_post);
 
 // GET request for one Developer.
 router.get("/developer/:id", developerController.developer_detail);

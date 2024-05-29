@@ -53,12 +53,13 @@ console.log(
     console.log(`Added award: ${name}`);
   }
 
-  async function developerCreate(index, name, founder, founded, headquarters) {
+  async function developerCreate(index, name, founder, founded, headquarters, logoUrl) {
     const developer = new Developer({
       name: name,
       founder: founder,
       founded: founded,
       headquarters: headquarters,
+      logo :logoUrl
     });
     await developer.save();
     developers[index] = developer;
@@ -131,13 +132,13 @@ console.log(
   async function createDevelopers() {
     console.log("Adding developers");
     await Promise.all([
-        developerCreate(0, "Naughty Dog", "Jason Rubin", new Date(1984, 9, 1), "Santa Monica, California, USA"),
-        developerCreate(1, "CD Projekt Red", "Michał Kiciński", new Date(1994, 3, 1), "Warsaw, Poland"),
-        developerCreate(2, "Rockstar Games", "Sam Houser", new Date(1998, 12, 1), "New York City, New York, USA"),
-        developerCreate(3, "Nintendo", "Fusajiro Yamauchi", new Date(1889, 9, 23), "Kyoto, Japan"),
-        developerCreate(4, "Ubisoft", "Christian Guillemot", new Date(1986, 3, 28), "Montreuil, France"),
-        developerCreate(5, "Blizzard Entertainment", "Allen Adham", new Date(1991, 2, 8), "Irvine, California, USA"),
-        developerCreate(6, "Electronic Arts", "Trip Hawkins", new Date(1982, 5, 28), "Redwood City, California, USA"),
+        developerCreate(0, "Naughty Dog", "Jason Rubin", new Date(1984, 9, 1), "Santa Monica, California, USA", ""),
+        developerCreate(1, "CD Projekt Red", "Michał Kiciński", new Date(1994, 3, 1), "Warsaw, Poland", ""),
+        developerCreate(2, "Rockstar Games", "Sam Houser", new Date(1998, 12, 1), "New York City, New York, USA", ""),
+        developerCreate(3, "Nintendo", "Fusajiro Yamauchi", new Date(1889, 9, 23), "Kyoto, Japan", ""),
+        developerCreate(4, "Ubisoft", "Christian Guillemot", new Date(1986, 3, 28), "Montreuil, France", ""),
+        developerCreate(5, "Blizzard Entertainment", "Allen Adham", new Date(1991, 2, 8), "Irvine, California, USA", ""),
+        developerCreate(6, "Electronic Arts", "Trip Hawkins", new Date(1982, 5, 28), "Redwood City, California, USA", ""),
     ]);
   }
   async function createGames() {

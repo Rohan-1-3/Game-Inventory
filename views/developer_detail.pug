@@ -16,3 +16,10 @@ block content
                 p
                     a(href=val.url) #{val.title}
                     span  (#{val.year_formatted})
+    hr
+    p
+        a(href=developer.url + "/delete")
+            button.delete-button Delete
+    p
+        a(href=developer.url + "/update")
+            button.update-button Update

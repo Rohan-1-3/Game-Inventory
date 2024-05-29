@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method="POST")
+        div.form-group
+            label(for='Name') Name:
+            br
+            input(type='text', id='name', name='name', required, value=(undefined===developer ? "" : developer.name))
+        div.form-group
+            label(for='Founder') Founder:
+            br
+            input(type='text', id='fouder', name='founder', required, value=(undefined===developer ? "" : developer.founder))
+        div.form-group
+            label(for='Name') Headquarters:
+            br
+            input(type='text', id='headquarters', name='headquarters', required, value=(undefined===developer ? "" : developer.headquarters))
+        div.form-group
+            label(for='Name') Founded:
+            br
+            input(type='date', id='founded', name='founded', required, value=(undefined===developer ? "" : developer.founded_yyyy_mm_dd))
+        div.form-group
+            label(for='Name') Logo Url:
+            br
+            input(type='text', id='logo', name='logo', value=(undefined===developer ? "" : developer.logo))
+        button(type= "submit") Submit
+    if errors
+        ul
+            for error in errors
+                li!= error.msg
