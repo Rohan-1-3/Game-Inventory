@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h1 #{title}
+
+  form(method='POST')
+    div.form-group
+      label(for='name') Award:
+      input#name.form-control(type='text', placeholder='Best Art Direction, Game of the Year...' name='name' required value=(undefined===award ? '' : award.name) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

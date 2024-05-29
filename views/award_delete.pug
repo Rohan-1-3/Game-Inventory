@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1 #{title} : #{award.name}
+
+    if games.length
+        p #[strong Delete the following games before attempting to delete this award.]
+        div(style='margin-left:20px;margin-top:20px')
+            h4 Games
+            dl
+                each game in games
+                    dt
+                        a(href=game.url) #{game.title}
+                        span  (#{game.year_formatted})
+    else
+        p Do you really want to delete this award?
+
+        form(method='POST')
+            div.form-group
+                input#awardid.form-control(type='hidden', name='awardid', value=award._id )
+
+            button.btn.btn-primary(type='submit') Delete

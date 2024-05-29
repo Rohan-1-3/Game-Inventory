@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  a(href="/catalog/award/create")
+            button.add-game Add Award +
+  if allAwardList.length
+    ul
+        each award in  allAwardList
+            li
+                a(href = award.url)  #{award.name}
+  else
+    p There are no award.

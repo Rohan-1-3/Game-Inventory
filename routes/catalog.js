@@ -136,29 +136,29 @@ router.get("/genres", genreController.genre_list);
 // router.get("/gameinstances", gameInstanceController.gameinstance_list);
 
 // // AWARDS
-// // GET request for list of all Awards.
 
-// router.get("/award/create", awardController.award_create_get);
+// GET request for list of all Awards.
+router.get("/award/create", awardController.award_create_get);
 
-// // POST request for creating Award.
-// router.post("/award/create", awardController.award_create_post);
+// POST request for creating Award.
+router.post("/award/create", awardController.award_create_post);
 
-// // GET request to delete Award.
-// router.get("/award/:id/delete", awardController.award_delete_get);
+// GET request to delete Award.
+router.get("/award/:id/delete", awardController.award_delete_get);
 
-// // POST request to delete Award.
-// router.post("/award/:id/delete", awardController.award_delete_post);
+// POST request to delete Award.
+router.post("/award/:id/delete", awardController.award_delete_post);
 
-// // GET request to update Award.
-// router.get("/award/:id/update", awardController.award_update_get);
+// GET request to update Award.
+router.get("/award/:id/update", awardController.award_update_get);
 
-// // POST request to update Award.
-// router.post("/award/:id/update", awardController.award_update_post);
+// POST request to update Award.
+router.post("/award/:id/update", awardController.award_update_post);
 
-// // GET request for one Award.
-// router.get("/award/:id", awardController.award_detail);
+// GET request for one Award.
+router.get("/award/:id", awardController.award_detail);
 
-// // GET request for list of all Award.
-// router.get("/awards", awardController.award_list);
+// GET request for list of all Award.
+router.get("/awards", awardController.award_list);
 
 module.exports = router;
