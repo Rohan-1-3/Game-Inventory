@@ -1,8 +1,5 @@
 const Game = require("../models/game");
 const Developer = require("../models/developer");
-const Award = require("../models/award");
-const Genre = require("../models/genre");
-const GameInstance = require("../models/gameinstance");
 const { body, validationResult} = require("express-validator");
 const asyncHandler = require("express-async-handler");
 

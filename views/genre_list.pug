@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  a(href="/catalog/genre/create")
+            button.add-game Add Genre +
+  if allGenreList.length
+    ul
+        each genre in  allGenreList
+            li
+                a(href = genre.url)  #{genre.name}
+  else
+    p There are no genres.

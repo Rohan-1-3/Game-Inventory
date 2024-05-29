@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  h1 Genre: #{genre.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h2(style='font-size: 1.5rem;') Games
+    if genre_games.length
+      dl
+        each game in genre_games
+          dt
+            a(href=game.url) #{game.title}
+            span  (#{game.year_formatted})
+    else
+      p This genre has no games.
+
+  hr
+  p
+    a(href=genre.url + "/delete")
+        button.delete-button Delete
+  p
+    a(href=genre.url + "/update")
+        button.update-button Update
