@@ -234,3 +234,7 @@ button.update-button {
 a.button {
   text-decoration: none;
 }
+
+a{
+  color: white;
+}
