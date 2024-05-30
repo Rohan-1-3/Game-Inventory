@@ -6,6 +6,9 @@ body{
   max-width: 1400px;
   margin: auto auto;
   padding: 1rem 2rem ;
+  color: white;
+  background-image: url("https://wallpapers.com/images/hd/aesthetic-gaming-omjy0egctdfygj93.jpg");
+  background-size: cover;
 }
 
 .main-container{
@@ -46,6 +49,7 @@ li {
 }
 
 div.game, .developer {
+  color: black;
   display: flex;
   align-items: center;
   background: white;
@@ -134,6 +138,7 @@ button:hover {
 }
 
 form {
+  color: black;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -193,6 +198,7 @@ input[type='submit']:hover {
 .copies-container {
   margin-top: 20px;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.484);
 }
 
 .text-success {
