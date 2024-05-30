@@ -18,7 +18,7 @@ block content
         label(for='developer') Developer:
         br
         select(id='developer', name='developer', required)
-            option(value="") --Please select an developer--
+            option(value="") --Please select a developer--
                 for developer in developers_list
                     if game
                         if developer._id.toString() === game.developer._id.toString()

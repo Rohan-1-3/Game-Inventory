@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method="POST")
+        div.form-group
+            label(for="game") Game:
+            br
+            select(id="game", name="game", required)
+                option(value="") --Please select a game--
+                    for game in games
+                        if gameinstance
+                            if game._id.toString() === gameinstance.game._id.toString()
+                                option(value=game._id selected) #{game.title}
+                            else
+                                option(value=game._id) #{game.title}
+                        else
+                            option(value=game._id) #{game.title}
+        div.form-group
+            label(for='due_back') Date when game available:
+            input#due_back.form-control(type='date' name='due_back' value=(undefined===gameinstance ? '' : gameinstance.due_back_yyyy_mm_dd))
+        div.form-group
+            label(for='status') Status:
+            select#status.form-control(name='status' required)
+                option(value='') --Please select a status--
+                each val in ['Maintenance', 'Available', 'Loaned', 'Reserved']
+                    if undefined===gameinstance || gameinstance.status!=val
+                        option(value=val)= val
+                    else
+                        option(value=val selected)= val
+
+        button.btn.btn-primary(type='submit') Submit
+
+    if errors
+        ul
+        for error in errors
+            li!= error.msg

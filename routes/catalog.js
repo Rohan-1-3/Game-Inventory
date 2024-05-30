@@ -93,47 +93,47 @@ router.get("/genres", genreController.genre_list);
 
 // /// GameInstance ROUTES ///
 
-// // GET request for creating a GameInstance. NOTE This must come before route that displays GameInstance (uses id).
-// router.get(
-//   "/gameinstance/create",
-//   gameInstanceController.gameinstance_create_get,
-// );
+// GET request for creating a GameInstance. NOTE This must come before route that displays GameInstance (uses id).
+router.get(
+  "/gameinstance/create",
+  gameInstanceController.gameinstance_create_get,
+);
 
-// // POST request for creating GameInstance.
-// router.post(
-//   "/gameinstance/create",
-//   gameInstanceController.gameinstance_create_post,
-// );
+// POST request for creating GameInstance.
+router.post(
+  "/gameinstance/create",
+  gameInstanceController.gameinstance_create_post,
+);
 
-// // GET request to delete GameInstance.
-// router.get(
-//   "/gameinstance/:id/delete",
-//   gameInstanceController.gameinstance_delete_get,
-// );
+// GET request to delete GameInstance.
+router.get(
+  "/gameinstance/:id/delete",
+  gameInstanceController.gameinstance_delete_get,
+);
 
-// // POST request to delete GameInstance.
-// router.post(
-//   "/gameinstance/:id/delete",
-//   gameInstanceController.gameinstance_delete_post,
-// );
+// POST request to delete GameInstance.
+router.post(
+  "/gameinstance/:id/delete",
+  gameInstanceController.gameinstance_delete_post,
+);
 
-// // GET request to update GameInstance.
-// router.get(
-//   "/gameinstance/:id/update",
-//   gameInstanceController.gameinstance_update_get,
-// );
+// GET request to update GameInstance.
+router.get(
+  "/gameinstance/:id/update",
+  gameInstanceController.gameinstance_update_get,
+);
 
-// // POST request to update GameInstance.
-// router.post(
-//   "/gameinstance/:id/update",
-//   gameInstanceController.gameinstance_update_post,
-// );
+// POST request to update GameInstance.
+router.post(
+  "/gameinstance/:id/update",
+  gameInstanceController.gameinstance_update_post,
+);
 
-// // GET request for one GameInstance.
-// router.get("/gameinstance/:id", gameInstanceController.gameinstance_detail);
+// GET request for one GameInstance.
+router.get("/gameinstance/:id", gameInstanceController.gameinstance_detail);
 
-// // GET request for list of all GameInstance.
-// router.get("/gameinstances", gameInstanceController.gameinstance_list);
+// GET request for list of all GameInstance.
+router.get("/gameinstances", gameInstanceController.gameinstance_list);
 
 // // AWARDS
 

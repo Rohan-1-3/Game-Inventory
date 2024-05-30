@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    a(href=gameinstance.game.url)
+        h2= gameinstance.game.title
+    p= gameinstance.game.description
+    p Status: #{gameinstance.status}
+    if gameinstance.status !== "Available"
+        p Due Back:  #{gameinstance.due_back_formatted}
+    hr
+    p
+        a(href=gameinstance.url+'/delete')
+            button.delete-button Delete
+    p
+        a(href = gameinstance.url+ "/update")
+            button.update-button Update

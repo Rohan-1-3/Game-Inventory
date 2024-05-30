@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  a(href="/catalog/gameinstance/create")
+            button.add-game Add Game Copy +
+  if gameinstances.length
+    ul
+      for gameinstance in gameinstances
+        li
+          a(href=gameinstance.url) #{gameinstance.game.title} Copy
+          p
+            if gameinstance.status
+              | Status: #{gameinstance.status}
+            if gameinstance.status !== "Available"
+              | , Due Back: #{gameinstance.due_back_formatted}
+  else
+    p There are no game instances.
